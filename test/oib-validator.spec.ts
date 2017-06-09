@@ -4,7 +4,7 @@ import {
   TestBed
 } from '@angular/core/testing';
 import { expect } from 'chai';
-import { OibValidator } from "../src/oib-validator";
+import { OibValidator } from '../src/oib-validator';
 
 describe('oib-hello-world component', () => {
 
