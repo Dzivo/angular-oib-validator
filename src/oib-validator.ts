@@ -4,11 +4,6 @@ import { NgModule } from '@angular/core';
 /**
  * Base static class for all validators
  */
-@NgModule({
-    imports: [],
-    declarations: [],
-    providers: []
-})
 export class OibValidator {
     /**
      * Angular 4.x.x Reactive Forms Validator function
