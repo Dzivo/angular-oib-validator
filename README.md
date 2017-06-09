@@ -47,7 +47,7 @@ Finally use in one of your apps components:
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray, AbstractControl, ValidationErrors } from '@angular/forms';
-import { checkOibValidator } from '../src/oib-validator';
+import { OibValidator } from 'angular-oib-validator';
 
 @Component({
   selector: 'oib-demo-app',
@@ -70,7 +70,7 @@ export class DemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      'oib': [null, [Validators.required, checkOibValidator]]
+      'oib': [null, [OibValidator.check]]
     });
   }
 }
