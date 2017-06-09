@@ -1,3 +1,4 @@
+import { OibValidator } from './oib-validator';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +8,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [
+    OibValidator
+  ]
 })
 export class AngularOibValidatorModule {
 
