@@ -1,20 +1,20 @@
 import { FormControl, ValidationErrors } from '@angular/forms';
-import { Directive } from "@angular/core";
+import { Directive } from '@angular/core';
 
 /**
  * Base static class for all validators
  */
-export class OibValidators {
+export class OibValidator {
     /**
      * Angular 4.x.x Reactive Forms Validator function
      * @param {FormControl} control Angular FormControl thats used for oib input
      * @returns {ValidationErrors} Returns Validations Errors with name validateOIB that can be used to bind errors in html
      */
-    public static checkOibValidator(control: FormControl): ValidationErrors {
+    public static check(control: FormControl): ValidationErrors {
 
         let valid: boolean = false;
         if (control !== null && control.value !== null) {
-            valid = OibValidators.checkOib(control.value);
+            valid = OibValidator.checkOib(control.value);
         }
 
         return valid ? null : {
@@ -25,7 +25,7 @@ export class OibValidators {
     }
 
     /**
-     * Checks if the entered OIB is valid 
+     * Checks if the entered OIB is valid
      * @param {string} oib OIB (Osobni Identifikacijski Broj) is a unique number assigned to citizens and companies in Croatia
      * @returns {boolean} Returns boolean indicating if OIB is valid
      */
@@ -50,4 +50,3 @@ export class OibValidators {
         return controlNumber === parseInt(oib.substr(10, 1));
     }
 }
-

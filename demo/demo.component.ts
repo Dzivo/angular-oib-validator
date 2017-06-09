@@ -1,4 +1,4 @@
-import { OibValidators } from './../src/oib-validator';
+import { OibValidator } from './../src/oib-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray, AbstractControl, ValidationErrors } from '@angular/forms';
 
@@ -33,7 +33,7 @@ export class DemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      'oib': [null, [Validators.required, OibValidators.checkOibValidator]]
+      'oib': [null, [Validators.required, OibValidator.check]]
     });
   }
 

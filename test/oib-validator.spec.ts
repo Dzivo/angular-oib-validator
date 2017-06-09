@@ -1,4 +1,4 @@
-import { OibValidators } from './../src/oib-validator';
+import { OibValidator } from './../src/oib-validator';
 import {
   inject,
   ComponentFixture,
@@ -18,10 +18,10 @@ describe('oib-hello-world component', () => {
   });
 
   it('should be valid oib', () => {
-    expect(OibValidators.checkOib('22386011315')).to.equal(true);
+    expect(OibValidator.checkOib('22386011315')).to.equal(true);
   });
 
   it('should not be valid oib', () => {
-    expect(OibValidators.checkOib('22386011314')).to.equal(false);
+    expect(OibValidator.checkOib('22386011314')).to.equal(false);
   });
 });
