@@ -1,6 +1,6 @@
 {
   "name": "angular-oib-validator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Angular OIB validator",
   "main": "./bundles/angular-oib-validator.umd.js",
   "module": "./index.js",
