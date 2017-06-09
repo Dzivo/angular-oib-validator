@@ -1,17 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelloWorldComponent } from './hello-world.component';
 
 @NgModule({
-  declarations: [
-    HelloWorldComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule
   ],
-  exports: [
-    HelloWorldComponent
-  ]
+  exports: []
 })
 export class AngularOibValidatorModule {
 

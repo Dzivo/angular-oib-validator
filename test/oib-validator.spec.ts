@@ -4,8 +4,8 @@ import {
   TestBed
 } from '@angular/core/testing';
 import { expect } from 'chai';
-import { HelloWorldComponent } from '../src/hello-world.component';
 import { AngularOibValidatorModule } from '../src';
+import { checkOib } from "../src/oib-validator";
 
 describe('oib-hello-world component', () => {
 
@@ -17,10 +17,12 @@ describe('oib-hello-world component', () => {
     });
   });
 
-  it('should say hello world', () => {
-    const fixture: ComponentFixture<HelloWorldComponent> = TestBed.createComponent(HelloWorldComponent);
-    fixture.detectChanges();
-    expect(fixture.nativeElement.innerHTML.trim()).to.equal('Hello world from the angular oib validator module!');
+  it('should be valid oib', () => {
+    expect(checkOib("22386011315")).to.equal(true);
+  });
+
+  it('should not be valid oib', () => {
+    expect(checkOib("22386011314")).to.equal(false);
   });
 
 });
