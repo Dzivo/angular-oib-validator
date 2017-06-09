@@ -24,5 +24,4 @@ describe('oib-hello-world component', () => {
   it('should not be valid oib', () => {
     expect(checkOib('22386011314')).to.equal(false);
   });
-
 });
