@@ -1,0 +1,13 @@
+{
+  "generator-angular-library": {
+    "githubUsername": "dzivo",
+    "githubRepoName": "angular-oib-validator",
+    "npmModuleName": "angular-oib-validator",
+    "moduleGlobal": "angularOibValidator",
+    "ngModuleName": "AngularOibValidatorModule",
+    "selectorPrefix": "oib",
+    "projectTitle": "angular oib validator",
+    "projectDescription": "Angular OIB validator",
+    "authorName": "Dživo Jelić"
+  }
+}
