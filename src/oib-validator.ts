@@ -1,9 +1,14 @@
 import { FormControl, ValidationErrors } from '@angular/forms';
-import { Directive } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 /**
  * Base static class for all validators
  */
+@NgModule({
+    imports: [],
+    declarations: [],
+    providers: []
+})
 export class OibValidator {
     /**
      * Angular 4.x.x Reactive Forms Validator function
