@@ -45,12 +45,35 @@ export class MyModule {}
 
 Finally use in one of your apps components:
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray, AbstractControl, ValidationErrors } from '@angular/forms';
+import { checkOibValidator } from '../src/oib-validator';
 
 @Component({
-  template: '<hello-world></hello-world>'
+  selector: 'oib-demo-app',
+  template: `
+  <div class="container">
+    <form [formGroup]="form">
+        <h1>Simple Example Validator</h1>
+        <input type="text" formControlName="oib">
+        <div *ngIf="form.controls.oib.errors?.validateOib">This doesn't appear to be a valid oib address.</div>
+     </form>
+  </div>
+  `
 })
-export class MyComponent {}
+export class DemoComponent implements OnInit {
+  form: FormGroup;
+
+  constructor(
+    private _fb: FormBuilder) {
+  }
+
+  ngOnInit(): void {
+    this.form = this._fb.group({
+      'oib': [null, [Validators.required, checkOibValidator]]
+    });
+  }
+}
 ```
 
 You may also find it useful to view the [demo source](https://github.com/dzivo/angular-oib-validator/blob/master/demo/demo.component.ts).

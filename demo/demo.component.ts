@@ -7,7 +7,7 @@ import { checkOibValidator } from '../src/oib-validator';
   template: `
   <div class="container">
     <form [formGroup]="form">
-        <h1>OIB Validator</h1>
+        <h1>OIB Validator Bootstrap</h1>
         <div class="form-group" [class.has-error]="isInvalidControl('oib')" [class.has-success]="this.form.get('oib').valid">
           <label class="control-label" for="oib">Input with error</label>
           <input type="text" class="form-control" id="oib" formControlName="oib" placeholder="OIB">
@@ -16,6 +16,10 @@ import { checkOibValidator } from '../src/oib-validator';
             <div *ngIf="form.controls.oib.errors?.required">This field is required.</div>
           </div>
         </div>
+
+        <h1>Simple Example Validator</h1>
+        <input type="text" formControlName="oib">
+        <div *ngIf="form.controls.oib.errors?.validateOib">This doesn't appear to be a valid oib address.</div>
      </form>
   </div>
   `
