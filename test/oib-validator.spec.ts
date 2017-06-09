@@ -5,7 +5,7 @@ import {
 } from '@angular/core/testing';
 import { expect } from 'chai';
 import { AngularOibValidatorModule } from '../src';
-import { checkOib } from "../src/oib-validator";
+import { checkOib } from '../src/oib-validator';
 
 describe('oib-hello-world component', () => {
 
@@ -18,11 +18,11 @@ describe('oib-hello-world component', () => {
   });
 
   it('should be valid oib', () => {
-    expect(checkOib("22386011315")).to.equal(true);
+    expect(checkOib('22386011315')).to.equal(true);
   });
 
   it('should not be valid oib', () => {
-    expect(checkOib("22386011314")).to.equal(false);
+    expect(checkOib('22386011314')).to.equal(false);
   });
 
 });
