@@ -18,8 +18,8 @@ import { FormGroup, FormControl, Validators, FormBuilder, FormArray, AbstractCon
         </div>
 
         <h1>Simple Example Validator</h1>
-        <input type="text" formControlName="oib">
-        <div *ngIf="form.controls.oib.errors?.validateOib">This doesn't appear to be a valid oib address.</div>
+        <input type="text" formControlName="oib-simple">
+        <div *ngIf="form.controls.oib-simple.errors?.validateOib">This doesn't appear to be a valid oib address.</div>
      </form>
   </div>
   `
@@ -33,7 +33,8 @@ export class DemoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      'oib': [null, [Validators.required, OibValidator.check]]
+      'oib': [null, [Validators.required, OibValidator.check]],
+      'oib-simple': [null, OibValidator.check]
     });
   }
 
